@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,34 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.primary-navbar {
+  position: sticky;
+  top:0;
+  background-color: #fff;
+  z-index: 1000;
+}
+.sticky-navbar {
+  position: sticky;
+  top:90px;
+  background-color: #fff;
+  z-index: 1000;
+}
+.sticky-navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+.sticky-navbar ul li {
+  margin-right: 20px;
+}
+.sticky-navbar ul li.active a {
+  color: red;
+}
+.section {
+  min-height: 400px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
 }
