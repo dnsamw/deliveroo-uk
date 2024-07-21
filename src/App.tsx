@@ -6,6 +6,7 @@ import './App.css';
 import MenuHeaderHero from './components/MenuHeaderHero';
 import MenuSection from './components/MenuSection';
 import FoodItemCard from './components/FoodItemCard';
+import Footer from './components/Footer';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -56,9 +57,7 @@ const App = () => {
           <MenuSection section={section} />
         ))}
       </section>
-      <section className="h-[600px] bg-gray-800 ">
-        FOOTER
-      </section>
+      <Footer />
     </div>
   );
 };
