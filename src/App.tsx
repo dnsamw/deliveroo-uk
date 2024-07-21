@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import StickyNavbar from './components/StickyNavbar';
+import { useState, useEffect } from 'react';
+import MenuStickyNavbar from './components/MenuStickyNavbar';
 import { sections } from './components/_testdata/fakeData';
 import PrimaryNavbar from './components/PrimaryNavbar';
 import './App.css';
+import MenuHeaderHero from './components/MenuHeaderHero';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -31,10 +32,10 @@ const App = () => {
   return (
     <div className="App">
       <PrimaryNavbar />
-      <section className="h-[500px] bg-gray-100">
-        RESTAURANT CARD
+      <section className="h-[500px] bg-white p-4">
+       <MenuHeaderHero />
       </section>
-      <StickyNavbar activeSection={activeSection}/>
+      <MenuStickyNavbar activeSection={activeSection}/>
       <section className="h-auto bg-gray-200">
         {sections.map((section) => (
           <div key={section.id} id={section.id} className="section">

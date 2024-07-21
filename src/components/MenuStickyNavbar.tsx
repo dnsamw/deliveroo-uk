@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { sections } from "./_testdata/fakeData";
 import NavItem from "./UI/NavItem";
 
@@ -6,7 +6,7 @@ type Props = {
   activeSection: string;
 };
 
-function StickyNavbar({ activeSection }: Props) {
+function MenuStickyNavbar({ activeSection }: Props) {
   const [isSticky, setIsSticky] = useState(false);
   const navbarRef = useRef<HTMLElement | null>(null);
 
@@ -48,4 +48,4 @@ function StickyNavbar({ activeSection }: Props) {
   );
 }
 
-export default StickyNavbar;
+export default MenuStickyNavbar;

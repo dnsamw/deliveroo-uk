@@ -1,6 +1,13 @@
 export const sections = [
-    { id: 'section1', name: 'Section 1' },
-    { id: 'section2', name: 'Section 2' },
-    { id: 'section3', name: 'Section 3' },
-    { id: 'section4', name: 'Section 4' },
+    { id: 'platters', name: 'Platters' },
+    { id: 'houseSpecial', name: 'House Special' },
+    { id: 'CreateYourOwn', name: 'Create your own' },
+    { id: 'gymFood', name: 'Gym food' },
+    { id: 'hotPowerBowls', name: 'Hot Power Bowls' },
+    { id: 'rainbowWraps', name: 'Rainbow Wraps' },
+    { id: 'veganMenu', name: 'Vegan Menu' },
+    { id: 'snacksSides', name: 'Snacks & Sides' },
+    { id: 'yoghurtFruit', name: 'Yoghurt & Fruit' },
+    { id: 'coldDrinks', name: 'Cold Drinks' },
+    { id: 'smoothiesShakesJuice', name: 'Smoothies, shakes & juice' },
   ];
