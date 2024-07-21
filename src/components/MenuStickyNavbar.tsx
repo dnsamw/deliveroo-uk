@@ -31,7 +31,7 @@ function MenuStickyNavbar({ activeSection }: Props) {
   return (
     <nav
       ref={navbarRef}
-      className={`sticky-navbar p-6 border h-[90px]
+      className={`sticky-navbar shadow-lg shadow-gray-300/40 shadow-b-2 p-6 border h-[90px]
         ${isSticky ? "fixed top-0 left-0 right-0" : ""}
       `}
     >

@@ -4,6 +4,8 @@ import { sections } from './components/_testdata/fakeData';
 import PrimaryNavbar from './components/PrimaryNavbar';
 import './App.css';
 import MenuHeaderHero from './components/MenuHeaderHero';
+import MenuSection from './components/MenuSection';
+import FoodItemCard from './components/FoodItemCard';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -37,14 +39,24 @@ const App = () => {
       </section>
       <MenuStickyNavbar activeSection={activeSection}/>
       <section className="h-auto bg-gray-200">
+        <div className='flex gap-4 p-4 bg-white'>
+          <FoodItemCard />
+          <FoodItemCard />
+          <FoodItemCard />
+          <FoodItemCard />
+          <FoodItemCard />
+          <FoodItemCard />
+          <FoodItemCard />  
+          <FoodItemCard />
+          <FoodItemCard />
+          <FoodItemCard />
+          <FoodItemCard />
+        </div>
         {sections.map((section) => (
-          <div key={section.id} id={section.id} className="section">
-            <h2>{section.name}</h2>
-            <p>Content for {section.name}</p>
-          </div>
+          <MenuSection section={section} />
         ))}
       </section>
-      <section className="h-screen bg-gray-300 ">
+      <section className="h-[600px] bg-gray-800 ">
         FOOTER
       </section>
     </div>
