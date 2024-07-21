@@ -4,7 +4,7 @@ import {
   IoPeopleOutline,
   IoPersonOutline,
 } from "react-icons/io5";
-import { IconButtonTypes } from "../../config";
+import { IconButtonTypes } from "../../Config";
 
 type Props = {
   type: IconButtonTypes;
@@ -13,20 +13,21 @@ type Props = {
 
 function IconButton({ type, text }: Props) {
   const renderIcon = (type: IconButtonTypes) => {
+    const btnClasses = "text-3xl text-teal-400"
     switch (type) {
       case IconButtonTypes.SIGNUP_LOGIN:
-        return <IoHomeOutline className="text-3xl" />;
+        return <IoHomeOutline className={btnClasses} />;
       case IconButtonTypes.ACCOUNT:
-        return <IoPersonOutline className="text-3xl" />;
+        return <IoPersonOutline className={btnClasses} />;
       case IconButtonTypes.GROUP_ORDER:
-        return <IoPeopleOutline className="text-3xl" />;
+        return <IoPeopleOutline className={btnClasses} />;
       default:
         return;
     }
   };
 
   return (
-    <button className="flex text-xl items-center gap-2 border px-4 py-2 rounded-md hover:border-gray-300">
+    <button className="flex text-xl items-center gap-2 border px-4 py-3 rounded-md hover:border-gray-300">
       <div>{renderIcon(type)}</div>
       <div>{text}</div>
     </button>

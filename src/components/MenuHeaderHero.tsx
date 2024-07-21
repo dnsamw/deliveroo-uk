@@ -5,7 +5,7 @@ import {
 } from "react-icons/io5";
 import deliverGuyIcon from "../components/UI/SVGIcons/deliver-guy-colored.svg";
 import IconButton from "./UI/IconButton";
-import { IconButtonTypes } from "../config";
+import { IconButtonTypes } from "../Config";
 type Props = {};
 
 function MenuHeaderHero({}: Props) {
