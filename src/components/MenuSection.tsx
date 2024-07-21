@@ -12,7 +12,7 @@ function MenuSection({ section }: Props) {
         <div className="menu-title p-4">
           <h2 className="text-gray-500 text-3xl font-bold">{section.name}</h2>
         </div>
-        <div className="food-item-grid grid grid-cols-3 gap-4 w-[70%]">
+        <div className="food-item-grid grid grid-cols-3 gap-4">
           <FoodMenuItemCard />
           <FoodMenuItemCard />
           <FoodMenuItemCard />

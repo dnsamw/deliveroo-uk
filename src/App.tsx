@@ -7,6 +7,7 @@ import MenuHeaderHero from './components/MenuHeaderHero';
 import MenuSection from './components/MenuSection';
 import FoodItemCard from './components/FoodItemCard';
 import Footer from './components/Footer';
+import BasketPreview from './components/BasketPreview';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -39,15 +40,14 @@ const App = () => {
        <MenuHeaderHero />
       </section>
       <MenuStickyNavbar activeSection={activeSection}/>
-      <section className="h-auto bg-gray-200">
+      <div className="section-container w-[100%] flex">        
+      <section className="h-auto bg-gray-200 w-[70%]">
         <div className='flex gap-4 p-4 bg-white'>
           <FoodItemCard />
           <FoodItemCard />
           <FoodItemCard />
           <FoodItemCard />
           <FoodItemCard />
-          <FoodItemCard />
-          <FoodItemCard />  
           <FoodItemCard />
           <FoodItemCard />
           <FoodItemCard />
@@ -57,6 +57,10 @@ const App = () => {
           <MenuSection section={section} />
         ))}
       </section>
+      <section className="h-auto bg-gray-50 p-6 w-[30%] relative">
+        <BasketPreview />
+      </section>
+      </div>
       <Footer />
     </div>
   );
