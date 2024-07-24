@@ -1,4 +1,4 @@
-import React, { Ref, useRef } from 'react';
+import React, {  useRef } from 'react';
 import FoodItemCard from '../FoodItemCard';
 import { IoReturnDownBack, IoReturnDownForward } from "react-icons/io5";
 
@@ -24,7 +24,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full py-4 px-6 bg-gray-50">
       <button
         onClick={scrollLeft}
         className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:shadow-xl"

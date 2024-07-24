@@ -42,26 +42,15 @@ const App = () => {
       </section>
       <MenuStickyNavbar activeSection={activeSection}/>
       <div className="section-container w-[100%] flex">        
-      <section className="h-auto bg-gray-200 w-[70%]">
-        {/* <div className='flex gap-4 p-4 bg-white'>
-          <FoodItemCard />
-          <FoodItemCard />
-          <FoodItemCard />
-          <FoodItemCard />
-          <FoodItemCard />
-          <FoodItemCard />
-          <FoodItemCard />
-          <FoodItemCard />
-          <FoodItemCard />
-        </div> */}
-        <Carousel />
-        {sections.map((section) => (
-          <MenuSection key={section.id} section={section} />
-        ))}
-      </section>
-      <section className="h-auto bg-gray-50 p-6 w-[30%] relative">
-        <BasketPreview />
-      </section>
+        <section className="h-auto bg-gray-200 w-[70%]">
+          <Carousel />
+          {sections.map((section) => (
+            <MenuSection key={section.id} section={section} />
+          ))}
+        </section>
+        <section className="h-auto bg-gray-50 p-6 w-[30%] relative">
+          <BasketPreview />
+        </section>
       </div>
       <Footer />
     </div>
