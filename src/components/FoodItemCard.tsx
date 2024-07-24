@@ -4,7 +4,7 @@ type Props = {}
 
 function FoodItemCard({}: Props) {
   return (
-    <div className="w-[200px] rounded overflow-hidden shadow-lg bg-white">
+    <div className="min-w-[200px] rounded overflow-hidden shadow-lg bg-white">
       <img src="https://rs-menus-api.roocdn.com/images/491fc50c-93bf-4f7b-85ee-ca56ec982922/image.jpeg?width=123&height=123&auto=webp&format=jpg&fit=crop" alt="Superfood salad" className="w-full h-[150px] object-cover" />
       <div className="p-4">
         <p className="text-pink-600 font-bold mb-2">50p to charity</p>

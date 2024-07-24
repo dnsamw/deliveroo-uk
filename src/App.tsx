@@ -8,6 +8,7 @@ import MenuSection from './components/MenuSection';
 import FoodItemCard from './components/FoodItemCard';
 import Footer from './components/Footer';
 import BasketPreview from './components/BasketPreview';
+import Carousel from './components/UI/Carousel';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -42,7 +43,7 @@ const App = () => {
       <MenuStickyNavbar activeSection={activeSection}/>
       <div className="section-container w-[100%] flex">        
       <section className="h-auto bg-gray-200 w-[70%]">
-        <div className='flex gap-4 p-4 bg-white'>
+        {/* <div className='flex gap-4 p-4 bg-white'>
           <FoodItemCard />
           <FoodItemCard />
           <FoodItemCard />
@@ -52,7 +53,8 @@ const App = () => {
           <FoodItemCard />
           <FoodItemCard />
           <FoodItemCard />
-        </div>
+        </div> */}
+        <Carousel />
         {sections.map((section) => (
           <MenuSection key={section.id} section={section} />
         ))}
