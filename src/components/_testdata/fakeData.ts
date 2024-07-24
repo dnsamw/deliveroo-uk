@@ -1,3 +1,9 @@
+export type MenuCategory = {
+  id: string;
+  name: string;
+};
+
+
 export const sections = [
     { id: 'platters', name: 'Platters' },
     { id: 'houseSpecial', name: 'House Special' },

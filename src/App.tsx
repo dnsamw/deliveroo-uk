@@ -54,7 +54,7 @@ const App = () => {
           <FoodItemCard />
         </div>
         {sections.map((section) => (
-          <MenuSection section={section} />
+          <MenuSection key={section.id} section={section} />
         ))}
       </section>
       <section className="h-auto bg-gray-50 p-6 w-[30%] relative">
