@@ -10,9 +10,9 @@ function MenuSection({ section }: Props) {
     <div className="bg-gray-50">
       <div key={section.id} id={section.id} className="section">
         <div className="menu-title p-4">
-          <h2 className="text-gray-500 text-3xl font-bold">{section.name}</h2>
+          <h2 className="text-gray-700 text-3xl font-bold">{section.name}</h2>
         </div>
-        <div className="food-item-grid grid grid-cols-3 gap-4">
+        <div className="food-item-grid grid grid-cols-1 xl:grid-cols-3 gap-4">
           <FoodMenuItemCard />
           <FoodMenuItemCard />
           <FoodMenuItemCard />

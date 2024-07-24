@@ -5,7 +5,7 @@ type Props = {}
 
 function FoodMenuItemCard({}: Props) {
   return (
-    <div className="bg-white max-w-lg rounded border p-6 overflow-hidden shadow-md shadow-gray-300/40 flex items-center space-x-4 hover:shadow-lg hover:shadow-gray-400/40 hover:shadow-b-2 hover:cursor-pointer">
+    <div className="bg-white w-full max-h-56 xl:max-w-lg rounded border p-6 overflow-hidden shadow-md shadow-gray-300/40 flex items-center space-x-4 hover:shadow-lg hover:shadow-gray-400/40 hover:shadow-b-2 hover:cursor-pointer">
 
       <div className="">
         <div className="text-gray-600 font-bold text-xl mb-2">halloumi & roasted veg salad platter</div>
@@ -15,9 +15,9 @@ function FoodMenuItemCard({}: Props) {
         <div className="text-gray-500 text-xl font-semibold mt-2">£59.99</div>
       </div>
 
-      <div className="h-[100%] w-[100%]">
+      <div className="h-[100%] w-[100%] flex justify-end  ">
         <img
-          className="object-cover w-[100%] h-[100%]"
+          className="object-cover w-40 h-40 xl:w-[100%] xl:h-[100%]"
           src="https://rs-menus-api.roocdn.com/images/491fc50c-93bf-4f7b-85ee-ca56ec982922/image.jpeg?width=123&height=123&auto=webp&format=jpg&fit=crop"
           alt="Halloumi & Roasted Veg Salad Platter"
         />
