@@ -40,8 +40,8 @@ function MenuStickyNavbar({ activeSection }: Props) {
   //responsive items feature
   useEffect(() => {
     const updateVisibleItems = (width: number) => {
-      const itemWidth = 180; // Approximate width of each item in pixels
-      const moreItemWidth = 180; // Width of the "More" item
+      const itemWidth = 140; // Approximate width of each item in pixels
+      const moreItemWidth = 140; // Width of the "More" item
       const availableWidth = width - moreItemWidth;
       const itemsToShow = Math.floor(availableWidth / itemWidth);
 
@@ -78,7 +78,7 @@ function MenuStickyNavbar({ activeSection }: Props) {
   return (
     <nav
       ref={navbarRef}
-      className={`sticky-navbar shadow-lg shadow-gray-300/40 shadow-b-2 p-6 border h-[90px]
+      className={`sticky-navbar shadow-lg shadow-gray-300/40 shadow-b-2 py-4 px-6 border h-auto
         ${isSticky ? "fixed top-0 left-0 right-0" : ""}
       `}
     >

@@ -46,7 +46,7 @@
 }
 .sticky-navbar {
   position: sticky;
-  top:90px;
+  top:70px;
   background-color: #fff;
   z-index: 1000;
 }
@@ -64,5 +64,5 @@
 .section {
   min-height: 400px;
   padding: 20px;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
 }

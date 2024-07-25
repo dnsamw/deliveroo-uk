@@ -13,7 +13,7 @@ type Props = {
 
 function IconButton({ type, text }: Props) {
   const renderIcon = (type: IconButtonTypes) => {
-    const btnClasses = "text-3xl text-teal-400"
+    const btnClasses = "text-xl text-teal-400"
     switch (type) {
       case IconButtonTypes.SIGNUP_LOGIN:
         return <IoHomeOutline className={btnClasses} />;
@@ -27,7 +27,7 @@ function IconButton({ type, text }: Props) {
   };
 
   return (
-    <button className="flex text-xl items-center gap-2 border px-4 py-3 rounded-md hover:border-gray-300">
+    <button className="flex text-md items-center gap-2 border px-4 py-2 rounded-md hover:border-gray-300">
       <div>{renderIcon(type)}</div>
       <div>{text}</div>
     </button>

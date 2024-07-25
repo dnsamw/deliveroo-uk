@@ -8,7 +8,7 @@ type Props = {}
 
 function PrimaryNavbar({}: Props) {
   return (
-    <nav className='primary-navbar px-6 border h-[90px] flex gap-4 justify-between items-center'>
+    <nav className='primary-navbar px-6 border h-[70px] flex gap-4 justify-between items-center'>
       <div className="brand ">
         <img className='h-12' src={brandIcon} alt={siteMaterData.brandName} />
       </div>
