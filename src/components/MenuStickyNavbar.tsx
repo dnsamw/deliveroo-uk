@@ -40,7 +40,7 @@ function MenuStickyNavbar({ activeSection }: Props) {
   //responsive items feature
   useEffect(() => {
     const updateVisibleItems = (width: number) => {
-      const itemWidth = 180; // Approximate width of each item in pixels
+      const itemWidth = 140; // Approximate width of each item in pixels
       const moreItemWidth = 140; // Width of the "More" item
       const availableWidth = width - moreItemWidth;
       const itemsToShow = Math.floor(availableWidth / itemWidth);

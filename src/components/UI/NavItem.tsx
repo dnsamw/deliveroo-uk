@@ -12,7 +12,7 @@ type Props = {
 
 function NavItem({ section, activeSection }: Props) {
   // Default classes for li element
-  const defaultClasses = "text-md px-4 py-2 rounded-full cursor-pointer";
+  const defaultClasses = "text-md px-4 py-2 rounded-full cursor-pointer focus:outline-none focus:ring-4 focus:ring-teal-100";
   return (
     <>
       <Link className="sticky-nav-item" to={section.id} spy={true} smooth={true} duration={500}>
