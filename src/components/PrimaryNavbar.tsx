@@ -12,12 +12,13 @@ function PrimaryNavbar({}: Props) {
       <div className="brand ">
         <img className='h-12' src={brandIcon} alt={siteMaterData.brandName} />
       </div>
-      <div className="search w-[40%]">
+      <div className="search w-[40%] hidden lg:block">
         <IconSearchBar />
       </div>
       <div className="actions flex gap-4 w-auto justify-end">
-        <IconButton type={IconButtonTypes.SIGNUP_LOGIN} text='Sign up or log in' />
-        <IconButton type={IconButtonTypes.ACCOUNT} text='Account' />
+        <IconButton type={IconButtonTypes.SEARCH} isResponsive={true} isEnableFocus={true} />
+        <IconButton type={IconButtonTypes.SIGNUP_LOGIN} text='Sign up or log in' isResponsive={true} />
+        <IconButton type={IconButtonTypes.ACCOUNT} text='Account' isResponsive={true}/>
       </div>
     </nav>
   )

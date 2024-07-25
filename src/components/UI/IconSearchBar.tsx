@@ -7,7 +7,7 @@ function IconSearchBar({}: Props) {
   return (
     <div className='relative'>
     <span className='absolute inset-y-0 left-0 flex items-center pl-3'><IoSearchOutline className='text-2xl text-gray-400'/></span>
-    <span className='absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer'><IoCloseOutline className='text-3xl text-gray-400'/></span>
+    <span className='absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer'><IoCloseOutline className='text-3xl text-gray-400 hidden lg:block'/></span>
     <input className='border rounded-md text-md px-4 py-2 pl-12 w-full' type="text" placeholder="Search Tossed - St Martin's Lane" />
     </div>
   )
