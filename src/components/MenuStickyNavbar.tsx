@@ -40,7 +40,7 @@ function MenuStickyNavbar({ activeSection }: Props) {
   //responsive items feature
   useEffect(() => {
     const updateVisibleItems = (width: number) => {
-      const itemWidth = 140; // Approximate width of each item in pixels
+      const itemWidth = 180; // Approximate width of each item in pixels
       const moreItemWidth = 140; // Width of the "More" item
       const availableWidth = width - moreItemWidth;
       const itemsToShow = Math.floor(availableWidth / itemWidth);
@@ -93,7 +93,7 @@ function MenuStickyNavbar({ activeSection }: Props) {
 
           {hiddenItems.length > 0 && (
           <div className="sticky-nav-item w-[320px] flex items-center justify-end">
-            <div onClick={() => setShowMore(!showMore)} className="flex items-center rounded-full cursor-pointer text-teal-400  hover:text-teal-500 text-xl">
+            <div onClick={() => setShowMore(!showMore)} className="flex items-center rounded-full cursor-pointer text-teal-400  hover:text-teal-500 text-md">
               {hiddenActiveItem ? <NavItem activeSection={activeSection} key={hiddenActiveItem.id} section={hiddenActiveItem} />: "More"} <IoChevronDown className="w-6 h-6 ml-2 text-teal-400" />
             </div>
             {showMore && <ul className="flex flex-col min-w-72 absolute right-0 top-20 bg-white shadow-md mt-2 rounded-sm">

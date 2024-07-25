@@ -10,79 +10,95 @@ type Props = {};
 
 function MenuHeaderHero({}: Props) {
   return (
-    <div className="w-full flex gap-4 h-full p-4 bg-white justify-between">
-      <div className="menu-thumb w-[30%] bg-white">
-        <div className="thumb-wrapper flex h-full items-center justify-center">
+    <div className="w-full flex flex-col sm:flex-row gap-4 p-0 sm:p-4 justify-between xl:bg-white">
+      <div className="menu-thumb w-full sm:w-[35%] xl:w-[30%] bg-white p-0 sm:p-4">
+        <div className="thumb-wrapper h-full flex items-center justify-center relative">
           <img
-            className="h-[400px]"
+            className="rounded w-full h-full lg:aspect-square object-cover xl:aspect-auto"
             src="https://rs-menus-api.roocdn.com/images/57800532-e16e-4743-83fb-06c3c2230d76/image.jpeg?width=538&height=302&auto=webp&format=jpg&fit=crop"
           />
+          <div className="absolute bottom-2 right-2 flex lg:hidden action-button mt-2 bg-white sm:right-auto sm:bottom-2">
+            <IconButton
+              type={IconButtonTypes.GROUP_ORDER}
+              text="Start group order"
+            />
+          </div>
         </div>
       </div>
-      <div className="menu-info w-[70%] bg-white p-4 grid grid-cols-2 grid-rows-5 gap-6">
-        <div className="title col-start-1 row-start-1">
-          <h1 className="text-5xl font-bold">Tossed - St Martin's Lane</h1>
-        </div>
+      <div className="menu-info w-[100%] sm:w-[65%] xl:w-[70%] bg-white p-4 grid grid-cols-1 xl:grid-cols-[1fr,auto] gap-1 xl:gap-2">
+        <div className="flex flex-col gap-2 xl:gap-4 xl:col-span-1">
+          <div className="title">
+            <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold">
+              Tossed - St Martin's Lane
+            </h1>
+          </div>
 
-        <div className="tags col-start-1 row-start-2 text-xl text-gray-500">
-          <ul className="flex gap-2">
-            <li>Chicken</li>
-            <li>· Salad</li>
-            <li>· Healthy</li>
-          </ul>
-        </div>
+          <div className="tags text-md text-gray-500">
+            <div className="flex flex-wrap gap-2">
+              <span>Chicken</span>
+              <span>· Salad</span>
+              <span>· Healthy</span>
+            </div>
+          </div>
 
-        <div className="metrics col-start-1 row-start-3 text-xl text-gray-500">
-          <ul className="flex gap-2">
-            <li>0.20 miles away</li>
-            <li>· Opens at 11:00 on Monday</li>
-            <li>· £7.00 minimum</li>
-            <li>· £1.29 delivery</li>
-          </ul>
-        </div>
+          <div className="metrics text-md text-gray-500">
+            <div className="flex flex-wrap gap-2">
+              <span>0.20 miles away</span>
+              <span>· Opens at 11:00 on Monday</span>
+              <span>· £7.00 minimum</span>
+              <span>· £1.29 delivery</span>
+            </div>
+          </div>
 
-        <div className="info col-start-1 row-start-4 text-xl text-gray-500 flex gap-4 items-center">
-          <div>
-            <IoInformationCircleOutline className="text-3xl" />
+          <div className="info text-md text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white hover:border-teal-100">
+            <div className="w-30 sm:w-auto">
+              <IoInformationCircleOutline className="text-3xl" />
+            </div>
+            <div className="w-full sm:w-auto">
+              <p className="text-md text-green-700">Info</p>
+              <p className="text-sm">Map, allergens and hygenene ratings</p>
+            </div>
+            <div className="w-30 sm:w-auto">
+              <IoChevronForwardSharp className="text-3xl text-teal-400" />
+            </div>
           </div>
-          <div>
-            <p className="text-2xl">Info</p>
-            <p className="text-sm">Map, allergens and hygenene ratings</p>
-          </div>
-          <IoChevronForwardSharp className="text-3xl text-teal-400" />
-        </div>
 
-        <div className="ratings col-start-1 row-start-5 text-xl text-gray-500 flex gap-4 items-center hover:cursor-pointer">
-          <div>
-            <IoStarSharp className="text-3xl" />
-          </div>
-          <div>
-            <p className="text-2xl">4.7 Excellent</p>
-            <p className="text-sm">Map, allergens and hygenene ratings</p>
-          </div>
-          <IoChevronForwardSharp className="text-3xl text-teal-400" />
-        </div>
-
-        <div className="deliver-info col-start-2 row-start-1 text-xl text-gray-500 flex gap-4 items-center justify-end">
-          <div>
-            <img className="w-[35px]" src={deliverGuyIcon} />
-          </div>
-          <div>
-            <p className="text-2xl">Deliver tomorrow from</p>
-            <p className="text-md">11:00 - 11:30</p>
-          </div>
-          <div className="action">
-            <a className="text-xl text-teal-400" href="#">
-              Change
-            </a>
+          <div className="ratings text-xl text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white hover:border-teal-100">
+            <div className="w-30 sm:w-auto">
+              <IoStarSharp className="text-3xl text-green-700" />
+            </div>
+            <div className="w-full sm:w-auto">
+              <p className="text-md text-green-700">4.7 Excellent</p>
+              <p className="text-sm">Map, allergens and hygenene ratings</p>
+            </div>
+            <div className="w-30 sm:w-auto">
+            <IoChevronForwardSharp className="text-3xl text-teal-400" />
+            </div>
           </div>
         </div>
 
-        <div className="col-start-2 row-start-2 flex justify-end">
-          <IconButton
-            type={IconButtonTypes.GROUP_ORDER}
-            text="Start group order"
-          />
+        <div className="flex flex-col gap-4 xl:col-start-2 xl:row-start-1 xl:row-span-2">
+          <div className="deliver-info text-md text-gray-500 flex gap-4">
+            <div>
+              <img className="w-[35px]" src={deliverGuyIcon} />
+            </div>
+            <div>
+              <p className="text-md">Deliver tomorrow from</p>
+              <p className="text-md">11:00 - 11:30</p>
+            </div>
+            <div className="action">
+              <a className="text-md text-teal-400" href="#">
+                Change
+              </a>
+            </div>
+          </div>
+
+          <div className="hidden lg:flex action-button mt-2">
+            <IconButton
+              type={IconButtonTypes.GROUP_ORDER}
+              text="Start group order"
+            />
+          </div>
         </div>
       </div>
     </div>
