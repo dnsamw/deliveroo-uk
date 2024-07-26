@@ -1,25 +1,26 @@
 import React from 'react'
 import { IoAddSharp } from "react-icons/io5";
+import { fakeFoodItem } from './_testdata/fakeData';
 
 type Props = {}
 
 function FoodMenuItemCard({}: Props) {
   return (
-    <div className="bg-white w-full max-h-42 2xl:max-h-36 2xl:max-w-lg rounded border p-6 overflow-hidden shadow-md shadow-gray-300/40 flex justify-between items-center space-x-4 hover:shadow-lg hover:shadow-gray-400/40 hover:shadow-b-2 hover:cursor-pointer">
+    <div className="bg-white  w-full min-h-32 md:max-h-42 2xl:max-h-36 2xl:max-w-lg rounded border p-4 md:p-6 overflow-hidden shadow-md shadow-gray-300/40 flex justify-between items-center space-x-4 hover:shadow-lg hover:shadow-gray-400/40 hover:shadow-b-2 hover:cursor-pointer">
 
       <div className="flex flex-col xl:h-28">
-        <div className="text-gray-700 font-bold text-md">halloumi & roasted veg salad platter</div>
+        <div className="text-gray-700 font-bold text-md">{fakeFoodItem.name}</div>
         <p className="text-gray-500 text-[0.85rem]">
-          A feast for 6 people! halloumi with pesto, roasted peppers, ...
+          {fakeFoodItem.shortDescription}
         </p>
-        <div className="text-gray-500 text-md">£59.99</div>
+        <div className="text-gray-500 text-md">{fakeFoodItem.price}</div>
       </div>
 
       <div className="flex justify-end">
         <img
           className="object-cover max-w-32 max-h-32 xl:max-w-28"
-          src="https://rs-menus-api.roocdn.com/images/491fc50c-93bf-4f7b-85ee-ca56ec982922/image.jpeg?width=123&height=123&auto=webp&format=jpg&fit=crop"
-          alt="Halloumi & Roasted Veg Salad Platter"
+          src={fakeFoodItem.thumbnail}
+          alt={fakeFoodItem.name}
         />
       </div>
 

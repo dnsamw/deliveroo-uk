@@ -12,9 +12,10 @@ type Props = {
   text?: string;
   isResponsive?: boolean;
   isEnableFocus?: boolean;
+  onClick?: () => void;
 };
 
-function IconButton({ type, text,isResponsive,isEnableFocus }: Props) {
+function IconButton({ type, text,isResponsive,isEnableFocus,onClick }: Props) {
   const renderIcon = (type: IconButtonTypes) => {
     const btnClasses = `text-xl text-teal-400`;
     switch (type) {
@@ -31,8 +32,12 @@ function IconButton({ type, text,isResponsive,isEnableFocus }: Props) {
     }
   };
 
+  const handleClick = () => {
+    if(onClick) onClick()
+  };
+
   return (
-    <button className="flex text-md items-center gap-2 border px-4 py-2 rounded-md hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-100">
+    <button onClick={handleClick} className="flex text-md items-center gap-2 border px-4 py-2 rounded-md hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-100">
       <div>{renderIcon(type)}</div>
       {!!text &&<div className={isResponsive ?"hidden lg:block" : "block"}>{text}</div>}
     </button>
