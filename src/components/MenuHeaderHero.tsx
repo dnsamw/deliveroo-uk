@@ -6,9 +6,17 @@ import {
 import deliverGuyIcon from "../components/UI/SVGIcons/deliver-guy-colored.svg";
 import IconButton from "./UI/IconButton";
 import { IconButtonTypes } from "../Config";
-type Props = {};
+import { useState } from "react";
+import SharedModalLayout from "../layouts/SharedModalLayout";
 
+type Props = {};
 function MenuHeaderHero({}: Props) {
+  const[isModalOpen, setIsModalOpen] = useState(false);
+  
+  const handleClick = () => {
+    setIsModalOpen(!isModalOpen);
+  }
+
   return (
     <div className="w-full flex flex-col sm:flex-row gap-4 p-0 sm:p-4 justify-between xl:bg-white">
       <div className="menu-thumb w-full sm:w-[35%] xl:w-[30%] bg-white p-0 sm:p-4">
@@ -50,7 +58,7 @@ function MenuHeaderHero({}: Props) {
             </div>
           </div>
 
-          <button className="info text-md text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-teal-100">
+          <button onClick={handleClick} className="info text-md text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-teal-100">
             <div className="w-30 sm:w-auto">
               <IoInformationCircleOutline className="text-3xl" />
             </div>
@@ -63,7 +71,7 @@ function MenuHeaderHero({}: Props) {
             </div>
           </button>
 
-          <button className="ratings text-xl text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-teal-100">
+          <button onClick={handleClick} className="ratings text-xl text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-teal-100">
             <div className="w-30 sm:w-auto">
               <IoStarSharp className="text-3xl text-green-700" />
             </div>
@@ -101,6 +109,7 @@ function MenuHeaderHero({}: Props) {
           </div>
         </div>
       </div>
+      {isModalOpen && <SharedModalLayout onClose={()=>setIsModalOpen(false)} />}
     </div>
   );
 }
