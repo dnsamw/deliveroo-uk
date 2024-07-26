@@ -13,11 +13,11 @@ function MenuSection({ section }: Props) {
           <h2 className="text-gray-700 text-2xl font-bold">{section.name}</h2>
         </div>
         <div className="food-item-grid grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 md:gap-4">
-          <FoodMenuItemCard />
-          <FoodMenuItemCard />
-          <FoodMenuItemCard />
-          <FoodMenuItemCard />
-          <FoodMenuItemCard />
+          <FoodMenuItemCard key={1} />
+          <FoodMenuItemCard key={2}/>
+          <FoodMenuItemCard key={3} />
+          <FoodMenuItemCard key={4} />
+          <FoodMenuItemCard key={5} />
         </div>
       </div>
     </div>

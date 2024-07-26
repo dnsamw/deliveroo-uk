@@ -5,12 +5,20 @@ import InputBlinnkingCursor from '../InputBlinnkingCursor';
 
 type Props = {
     modalType:ModalType | null;
-    exitType:ModalExitType;
     onClose: () => void;
     modalTitle?: string
 }
 
-function ModalHeader({exitType, onClose, modalTitle,modalType}: Props) {
+function ModalHeader({ onClose, modalTitle,modalType}: Props) {
+
+    const getModalExitType = (modalType:ModalType | null) => {
+        switch (modalType) {
+            case ModalType.MobileSearch:
+                return ModalExitType.Back
+            default:
+                return ModalExitType.Close
+       }
+    }
 
     const renderExitIcon = (exitType:ModalExitType) => {
         switch (exitType) {
@@ -30,8 +38,8 @@ function ModalHeader({exitType, onClose, modalTitle,modalType}: Props) {
     <div className="modal-header border-b h-[60px] bg-white flex justify-center items-center relative">
                 {(modalTitle && modalType !== ModalType.MobileSearch) && <h3 className="text-md font-bold">{modalTitle}</h3>}
                 {modalType === ModalType.MobileSearch && <InputBlinnkingCursor placeholder={modalTitle} />}
-                <button onClick={onClose} className={`colse absolute ${exitType===ModalExitType.Back ? "left-4":"right-4"} cursor-pointer rounded focus:outline-none focus:ring-2 focus:ring-teal-100`}>
-                    {renderExitIcon(exitType)}
+                <button onClick={onClose} className={`colse absolute ${getModalExitType(modalType)===ModalExitType.Back ? "left-4":"right-4"} cursor-pointer rounded focus:outline-none focus:ring-2 focus:ring-teal-100`}>
+                    {renderExitIcon(getModalExitType(modalType))}
                 </button>
             </div>
     </>

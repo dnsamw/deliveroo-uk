@@ -8,7 +8,7 @@ function InputBlinnkingCursor({placeholder}: Props) {
   return (
     <>
       <div className="cursor relative ml-8 mr-2 w-[80%]">
-        <input placeholder={`Search ${placeholder}`} type="text" className="p-2 w-full" />
+        <input placeholder={`Search ${placeholder}`} type="text" className="p-2 w-full focus:outline-none" />
         <i className="bg-teal-400"></i>
       </div>
     </>

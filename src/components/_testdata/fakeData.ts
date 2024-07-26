@@ -22,5 +22,6 @@ export const fakeFoodItem = {
   thumbnail:"https://rs-menus-api.roocdn.com/images/491fc50c-93bf-4f7b-85ee-ca56ec982922/image.jpeg?width=123&height=123&auto=webp&format=jpg&fit=crop",
   name:"Halloumi & Roasted Veg Salad Platter",
   shortDescription:"A feast for 6 people! halloumi with pesto, roasted peppers, ...",
-  price:"£59.99"
+  price:"£59.99",
+  cal:"367 kcal",
 }
