@@ -1,14 +1,16 @@
 import React from 'react'
-import { ModalExitType } from '../../../types'
+import { ModalExitType, ModalType } from '../../../types'
 import { IoArrowBack, IoArrowForward, IoCloseSharp } from "react-icons/io5";
+import InputBlinnkingCursor from '../InputBlinnkingCursor';
 
 type Props = {
+    modalType:ModalType | null;
     exitType:ModalExitType;
     onClose: () => void;
-    modalTitle: string
+    modalTitle?: string
 }
 
-function ModalHeader({exitType, onClose, modalTitle}: Props) {
+function ModalHeader({exitType, onClose, modalTitle,modalType}: Props) {
 
     const renderExitIcon = (exitType:ModalExitType) => {
         switch (exitType) {
@@ -26,8 +28,9 @@ function ModalHeader({exitType, onClose, modalTitle}: Props) {
   return (
     <>
     <div className="modal-header border-b h-[60px] bg-white flex justify-center items-center relative">
-                <h3 className="text-md font-bold">{modalTitle}</h3>
-                <button onClick={onClose} className="colse absolute right-4 cursor-pointer p- rounded focus:outline-none focus:ring-2 focus:ring-teal-100">
+                {(modalTitle && modalType !== ModalType.MobileSearch) && <h3 className="text-md font-bold">{modalTitle}</h3>}
+                {modalType === ModalType.MobileSearch && <InputBlinnkingCursor placeholder={modalTitle} />}
+                <button onClick={onClose} className={`colse absolute ${exitType===ModalExitType.Back ? "left-4":"right-4"} cursor-pointer rounded focus:outline-none focus:ring-2 focus:ring-teal-100`}>
                     {renderExitIcon(exitType)}
                 </button>
             </div>

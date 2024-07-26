@@ -61,6 +61,28 @@
 .sticky-navbar ul li.active a {
   color: red;
 }
+
+.cursor	i {
+	position: absolute;
+	width: 2px;
+	height: 70%;
+	/* background-color: gray; */
+	left: 5px;
+	top: 10%;
+	animation-name: blink;
+	animation-duration: 800ms;
+	animation-iteration-count: infinite;
+	opacity: 1;
+}
+
+.cursor input:focus + i {
+	display: none;
+}
+
+@keyframes blink {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
 /* .section {
   min-height: 400px;
   padding: 20px;

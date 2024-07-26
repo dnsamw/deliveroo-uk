@@ -5,6 +5,7 @@ import IconButton from './UI/IconButton'
 import IconSearchBar from './UI/IconSearchBar'
 import useUIMeasurements from '../hooks/useUIMeasurements'
 import SharedModalLayout from '../layouts/SharedModalLayout'
+import { ModalType } from '../types'
 
 type Props = {}
 
@@ -25,7 +26,7 @@ function PrimaryNavbar({}: Props) {
         <IconButton type={IconButtonTypes.SIGNUP_LOGIN} text='Sign up or log in' isResponsive={true} />
         <IconButton type={IconButtonTypes.ACCOUNT} text='Account' isResponsive={true}/>
       </div>
-      {isModalOpen && <SharedModalLayout onClose={()=>setIsModalOpen(false)} />}
+      {isModalOpen && <SharedModalLayout modalType={ModalType.MobileSearch} onClose={()=>setIsModalOpen(false)} />}
     </nav>
   )
 }
