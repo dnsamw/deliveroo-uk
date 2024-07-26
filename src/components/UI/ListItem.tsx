@@ -8,7 +8,7 @@ type Props = {
 };
 
 function ListItem({ item, activeItem }: Props) {
-  const defaultClasses = "text-xl px-6 py-4 cursor-pointer border-b border-gray-200 rounded-sm hover:bg-gray-100";
+  const defaultClasses = "text-md px-6 py-4 cursor-pointer border-b border-gray-200 rounded-sm hover:bg-gray-100";
   return (
     <>
       <Link
@@ -22,7 +22,7 @@ function ListItem({ item, activeItem }: Props) {
           key={item.id}
           className={`${defaultClasses} ${
             activeItem === item.id
-              ? "bg-white text-black font-bold"
+              ? "bg-white text-black font-semibold"
               : "text-gray-700 bg-white"
           }`}
         >
