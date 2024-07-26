@@ -50,31 +50,31 @@ function MenuHeaderHero({}: Props) {
             </div>
           </div>
 
-          <div className="info text-md text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white hover:border-teal-100">
+          <button className="info text-md text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-teal-100">
             <div className="w-30 sm:w-auto">
               <IoInformationCircleOutline className="text-3xl" />
             </div>
-            <div className="w-full sm:w-auto">
+            <div className="w-full sm:w-auto flex flex-col items-start">
               <p className="text-md text-green-700">Info</p>
               <p className="text-sm">Map, allergens and hygenene ratings</p>
             </div>
             <div className="w-30 sm:w-auto">
               <IoChevronForwardSharp className="text-3xl text-teal-400" />
             </div>
-          </div>
+          </button>
 
-          <div className="ratings text-xl text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white hover:border-teal-100">
+          <button className="ratings text-xl text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-teal-100">
             <div className="w-30 sm:w-auto">
               <IoStarSharp className="text-3xl text-green-700" />
             </div>
-            <div className="w-full sm:w-auto">
+            <div className="w-full sm:w-auto flex flex-col items-start">
               <p className="text-md text-green-700">4.7 Excellent</p>
               <p className="text-sm">Map, allergens and hygenene ratings</p>
             </div>
             <div className="w-30 sm:w-auto">
             <IoChevronForwardSharp className="text-3xl text-teal-400" />
             </div>
-          </div>
+          </button>
         </div>
 
         <div className="flex flex-col gap-4 xl:col-start-2 xl:row-start-1 xl:row-span-2">

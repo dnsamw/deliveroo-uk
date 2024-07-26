@@ -32,7 +32,7 @@ function IconButton({ type, text,isResponsive,isEnableFocus }: Props) {
   };
 
   return (
-    <button className="flex text-md items-center gap-2 border px-4 py-2 rounded-md hover:border-gray-300 focus:outline-none focus:ring-4 focus:ring-teal-100">
+    <button className="flex text-md items-center gap-2 border px-4 py-2 rounded-md hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-100">
       <div>{renderIcon(type)}</div>
       {!!text &&<div className={isResponsive ?"hidden lg:block" : "block"}>{text}</div>}
     </button>
