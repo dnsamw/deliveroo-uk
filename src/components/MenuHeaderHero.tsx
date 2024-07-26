@@ -9,7 +9,7 @@ import { IconButtonTypes } from "../Config";
 import { useState } from "react";
 import { ModalType } from "../types";
 import RestaurantInfoModal from "./modals/RestaurantInfoModal";
-import RestauranReviewsModal from "./modals/RestauranReviewsModal";
+import RestaurantReviewsModal from "./modals/RestaurantReviewsModal";
 
 type Props = {};
 function MenuHeaderHero({}: Props) {
@@ -26,7 +26,7 @@ function MenuHeaderHero({}: Props) {
       case ModalType.RestaurantInfo:
         return <RestaurantInfoModal onClose={() => setIsModalOpen(false)} />;
       case ModalType.RestaurantReviews:
-        return <RestauranReviewsModal onClose={() => setIsModalOpen(false)} />;
+        return <RestaurantReviewsModal onClose={() => setIsModalOpen(false)} />;
       default:
         return null;
     }

@@ -7,7 +7,7 @@ type Props = {
   onClose: () => void;
 };
 
-function RestauranReviewsModal({ onClose }: Props) {
+function RestaurantReviewsModal({ onClose }: Props) {
   const handleClose = () => {
     onClose();
   };
@@ -28,4 +28,4 @@ function RestauranReviewsModal({ onClose }: Props) {
   );
 }
 
-export default RestauranReviewsModal;
+export default RestaurantReviewsModal;
