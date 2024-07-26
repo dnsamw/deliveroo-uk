@@ -12,8 +12,8 @@ function FoodItemCard({}: Props) {
   }
   return (
     <>
-    <div onClick={handleClick} className="min-w-[130px] rounded overflow-hidden shadow-lg bg-white">
-      <img src={fakeFoodItem.thumbnail} alt="Superfood salad" className="w-full h-32 object-cover" />
+    <div onClick={handleClick} className="min-w-[130px] rounded overflow-hidden shadow-lg bg-white hover:cursor-pointer">
+      <img src={fakeFoodItem.thumbnail} alt={fakeFoodItem.name} className="w-full h-32 object-cover" />
       <div className="px-4 py-2">
         <h2 className="text-md font-semibold">{fakeFoodItem.name}</h2>
         <p className="text-sm text-gray-500">{fakeFoodItem.cal}</p>
