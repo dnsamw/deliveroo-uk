@@ -28,7 +28,8 @@ module.exports = {
     extend: {
       
 			animation: {
-				fade: 'fadeIn .5s ease-in-out',
+				fade: 'fadeIn .3s ease-in-out',
+        zoom: 'zoomIn .2s ease-in-out',
 			},
 
 			keyframes: {
@@ -36,6 +37,10 @@ module.exports = {
 					from: { opacity: 0 },
 					to: { opacity: 1 },
 				},
+         zoomIn: {
+          from: { transform: 'scale(0.9)' },
+          to: { transform: 'scale(1)' },
+        },
 			},
 		},
   },
