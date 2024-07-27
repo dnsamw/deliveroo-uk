@@ -10,6 +10,7 @@ import { useState } from "react";
 import { ModalType } from "../types";
 import RestaurantInfoModal from "./modals/RestaurantInfoModal";
 import RestaurantReviewsModal from "./modals/RestaurantReviewsModal";
+import {fakeFoodMenu as foodMenu} from "./_testdata/fakeData";
 
 type Props = {};
 function MenuHeaderHero({}: Props) {
@@ -32,6 +33,26 @@ function MenuHeaderHero({}: Props) {
     }
   };
 
+  const getDistanceFromCurrentLocation = () => {
+    // fake - use google maps api to get real data !!
+    return "0.20 miles";
+  };
+  const getNearestOpenDateAndTime = () => {
+    // fake - calculate here !!
+    return "11:00 on Monday";
+  };
+
+  const getDeiveryCharge = () => {
+    // fake - calculate here according to the distance and other factors!!
+    return "1.29";
+  };
+
+  const getOverallRating = (rating_value: number) => {
+    if(rating_value < 2.9) return rating_value + " Poor";
+    if(rating_value < 3.5) return rating_value + " Good";
+    if(rating_value > 3.5) return rating_value + " Exellent";
+  };
+
   return (
     <div className="w-full flex flex-col sm:flex-row gap-4 p-0 sm:p-4 justify-between xl:bg-white">
       <div className="menu-thumb w-full sm:w-[35%] xl:w-[30%] bg-white p-0 sm:p-4">
@@ -52,24 +73,22 @@ function MenuHeaderHero({}: Props) {
         <div className="flex flex-col gap-2 xl:gap-4 xl:col-span-1">
           <div className="title">
             <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold">
-              Tossed - St Martin's Lane
+              {foodMenu.restaurant.name}
             </h1>
           </div>
 
           <div className="tags text-md text-gray-500">
             <div className="flex flex-wrap gap-2">
-              <span>Chicken</span>
-              <span>· Salad</span>
-              <span>· Healthy</span>
+              {foodMenu.tags.map((tag, index) => <span key={index}> { foodMenu.tags.length-1 !==index  ? `${tag} . `:tag}</span>)}
             </div>
           </div>
 
           <div className="metrics text-md text-gray-500">
             <div className="flex flex-wrap gap-2">
-              <span>0.20 miles away</span>
-              <span>· Opens at 11:00 on Monday</span>
-              <span>· £7.00 minimum</span>
-              <span>· £1.29 delivery</span>
+              <span>{getDistanceFromCurrentLocation()} miles away</span>
+              <span>· Opens at {getNearestOpenDateAndTime()}</span>
+              <span>· £ {foodMenu.min_price.toFixed(2)} minimum</span>
+              <span>· £ {getDeiveryCharge()} delivery</span>
             </div>
           </div>
 
@@ -81,7 +100,7 @@ function MenuHeaderHero({}: Props) {
               <IoInformationCircleOutline className="text-3xl" />
             </div>
             <div className="w-full sm:w-auto flex flex-col items-start">
-              <p className="text-md text-green-700">Info</p>
+              <p className="text-md text-gray-700">Info</p>
               <p className="text-sm">Map, allergens and hygenene ratings</p>
             </div>
             <div className="w-30 sm:w-auto">
@@ -97,7 +116,7 @@ function MenuHeaderHero({}: Props) {
               <IoStarSharp className="text-3xl text-green-700" />
             </div>
             <div className="w-full sm:w-auto flex flex-col items-start">
-              <p className="text-md text-green-700">4.7 Excellent</p>
+              <p className="text-md text-green-700">{getOverallRating(foodMenu.overall_rating)}</p>
               <p className="text-sm">Map, allergens and hygenene ratings</p>
             </div>
             <div className="w-30 sm:w-auto">

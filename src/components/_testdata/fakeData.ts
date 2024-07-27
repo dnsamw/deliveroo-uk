@@ -3,6 +3,9 @@ export type FoodMenu = {
   id: string;
   name: string;
   description: string;
+  tags: string[];
+  min_price: number;
+  overall_rating: number;
   sections: FoodMenuSection[];
   restaurant: string;
 };
@@ -17,9 +20,14 @@ export type MenuCategory = {
   name: string;
 };
 
-enum RequiredFlag {
+export enum RequiredFlag {
   NO = 0,
   YES = 1,
+}
+
+export enum OptionSelectionType{
+  RADIO = 1,
+  CHECKBOX = 2
 }
 
 export type FoodProduct = {
@@ -41,6 +49,7 @@ export type FoodOption = {
   short_description: string;
   option_required_flg: RequiredFlag;
   option_items: FoodOptionItem[];
+  option_selection_type:OptionSelectionType;
 };
 
 export type FoodOptionItem = {
@@ -111,12 +120,23 @@ export const fakeFoodOptionItems: FoodOptionItem[] = [
   },
 ];
 
-export const fakeFoodOption: FoodOption = {
+export const fakeFoodOption_1: FoodOption = {
   option_display_name: "Choose your protein",
   option_name: "extra protien",
   short_description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   option_required_flg: 1,
+  option_selection_type: OptionSelectionType.RADIO,
+  option_items: fakeFoodOptionItems,
+};
+
+export const fakeFoodOption_2: FoodOption = {
+  option_display_name: "Choose your carbohydrates",
+  option_name: "extra protien",
+  short_description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  option_required_flg: 0,
+  option_selection_type: OptionSelectionType.CHECKBOX,
   option_items: fakeFoodOptionItems,
 };
 
@@ -131,7 +151,7 @@ export const fakeFoodProduct: FoodProduct = {
   description:
     "A feast for 6 people! halloumi with pesto, roasted peppers, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   ingredients: ["eggs", "milk", "mustard", "sulphur dioxide/sulphites"],
-  products_options: [fakeFoodOption,fakeFoodOption],
+  products_options: [fakeFoodOption_1,fakeFoodOption_2],
 };
 
 export const fakeFoodProducts: FoodProduct[] = [
@@ -197,6 +217,9 @@ export const fakeFoodMenu = {
   name: "Platters",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  min_price:7.12345,
+  overall_rating: 4.7,
+  tags:["chicken", "salad", "healthy"],
   sections: fakeFoodMenuSections,
   restaurant: fakeRestaurant,
 };

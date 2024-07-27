@@ -29,7 +29,7 @@ function FoodProductCard({}: Props) {
           </button>
         </div>
       </div>
-      {isModalOpen && <FoodProductModal onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && <FoodProductModal  onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }
