@@ -11,6 +11,7 @@ import { ModalType } from "../types";
 import RestaurantInfoModal from "./modals/RestaurantInfoModal";
 import RestaurantReviewsModal from "./modals/RestaurantReviewsModal";
 import {fakeFoodMenu as foodMenu} from "./_testdata/fakeData";
+import LocationChangerModal from "./modals/LocationChangerModal";
 
 type Props = {};
 function MenuHeaderHero({}: Props) {
@@ -28,6 +29,8 @@ function MenuHeaderHero({}: Props) {
         return <RestaurantInfoModal onClose={() => setIsModalOpen(false)} />;
       case ModalType.RestaurantReviews:
         return <RestaurantReviewsModal onClose={() => setIsModalOpen(false)} />;
+      case ModalType.LocationChanger:
+        return <LocationChangerModal onClose={() => setIsModalOpen(false)} />;
       default:
         return null;
     }
@@ -126,6 +129,10 @@ function MenuHeaderHero({}: Props) {
         </div>
 
         <div className="flex flex-col gap-4 xl:col-start-2 xl:row-start-1 xl:row-span-2">
+        <button
+            onClick={() => handleModalOpen(ModalType.LocationChanger)}
+            className="ratings text-gray-500 flex items-center gap-4 hover:cursor-pointer xl:w-[350px] rounded p-1 border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-teal-100"
+          >
           <div className="deliver-info text-md text-gray-500 flex gap-4">
             <div>
               <img className="w-[35px]" src={deliverGuyIcon} />
@@ -140,6 +147,7 @@ function MenuHeaderHero({}: Props) {
               </a>
             </div>
           </div>
+          </button>
 
           <div className="hidden lg:flex action-button mt-2">
             <IconButton

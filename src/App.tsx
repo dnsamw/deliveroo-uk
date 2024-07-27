@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import MenuStickyNavbar from "./components/MenuStickyNavbar";
-import { fakeFoodMenuSections as foodMenuSections } from "./components/_testdata/fakeData";
+import { fakeFoodMenu, fakeFoodMenuSections as foodMenuSections } from "./components/_testdata/fakeData";
 import PrimaryNavbar from "./components/PrimaryNavbar";
 import "./App.css";
 import MenuHeaderHero from "./components/MenuHeaderHero";
@@ -27,6 +27,9 @@ const App = () => {
       setActiveSection(newActiveSection);
     };
 
+    console.log(fakeFoodMenu);
+    
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -34,20 +37,20 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App bg-gray-50">
       <PrimaryNavbar />
       <section className="h-auto bg-white p-0 sm:p-4">
         <MenuHeaderHero />
       </section>
       <MenuStickyNavbar activeSection={activeSection} />
-      <div className="section-container w-[100%] flex">
-        <section className="h-auto bg-gray-200 w-[100%] md:w-[60%] xl:w-[70%]">
+      <div className="section-container w-[100%] flex md:px-6">
+        <section className="h-auto w-[100%] md:w-[60%] xl:w-[70%]">
           <Carousel />
           {foodMenuSections.map((section) => (
             <MenuSection key={section.id} section={section} />
           ))}
         </section>
-        <section className="h-auto hidden md:block bg-gray-50 p-6 w-[40%] xl:w-[30%] relative">
+        <section className="h-auto hidden md:block p-6 w-[40%] xl:w-[30%] relative">
           <BasketPreview />
         </section>
       </div>

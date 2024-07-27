@@ -3,7 +3,7 @@ export enum ModalType {
   MobileSearch = "MOBILE_SEARCH",
   RestaurantInfo = "RESTAURANT_INFO",
   RestaurantReviews = "RESTAURANT_REVIEWS",
-  DeliveryPickupInfo = "DELIVERY_PICKUP_INFO",
+  LocationChanger = "LOCATION_CHANGER",
 }
 
 export enum ModalExitType {

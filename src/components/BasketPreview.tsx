@@ -4,7 +4,7 @@ type Props = {};
 
 function BasketPreview({}: Props) {
   return (
-    <div className="sticky top-[180px] left-0 right-0 flex flex-col items-center justify-between border border-gray-200 rounded-lg p-8 w-full h-[calc(100vh-230px)] mx-auto bg-white">
+    <div className="sticky top-[180px] left-0 right-0 bg-white flex flex-col items-center justify-between border border-gray-200 rounded-lg p-8 w-full h-[calc(100vh-230px)] mx-auto">
       <div></div>
 
       <div className="no-items flex flex-col justify-center items-center">
