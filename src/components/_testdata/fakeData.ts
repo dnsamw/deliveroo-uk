@@ -18,7 +18,7 @@ export const sections = [
     { id: 'smoothiesShakesJuice', name: 'Smoothies, shakes & juice' },
   ];
 
-export const fakeFoodItem = {
+export const fakeFoodProduct = {
   thumbnail:"https://rs-menus-api.roocdn.com/images/491fc50c-93bf-4f7b-85ee-ca56ec982922/image.jpeg?width=123&height=123&auto=webp&format=jpg&fit=crop",
   name:"Halloumi & Roasted Veg Salad Platter",
   shortDescription:"A feast for 6 people! halloumi with pesto, roasted peppers, ...",
@@ -29,8 +29,22 @@ export const fakeFoodItem = {
 }
 
 
+export const fakeFoodOptionItems = [
+    { id: 'double-grilled', name: 'double grilled chicken thigh', allergens: 'no known allergens', calories: 252, price: 2.69 },
+    { id: 'chicken-breast', name: 'chicken breast', allergens: 'no known allergens', calories: 93 },
+    { id: 'grilled-chicken', name: 'grilled chicken thigh', allergens: 'no known allergens', calories: 126 },
+    { id: 'falafel', name: 'falafel', allergens: 'Contains gluten', calories: 148 },
+]
+
+export const fakeFoodOption = {
+  option_display_name:"Choose your protein",
+  option_name:"extra protien",
+  option_required_flg:1,
+  option_items:fakeFoodOptionItems,
+} 
+
 export const fakeRestaurant = {
-  name:"Toss - St Martin's Lane",
-  thumbnail:"https://rs-menus-api.roocdn.com/images/57800532-e16e-4743-83fb-06c3c2230d76/image.jpeg?width=538&height=302&auto=webp&format=jpg&fit=crop",
+  item_name:"Toss - St Martin's Lane",
+  item_thumbnail:"https://rs-menus-api.roocdn.com/images/57800532-e16e-4743-83fb-06c3c2230d76/image.jpeg?width=538&height=302&auto=webp&format=jpg&fit=crop",
   categories:sections
 }

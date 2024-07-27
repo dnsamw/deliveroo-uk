@@ -5,7 +5,6 @@ import PrimaryNavbar from "./components/PrimaryNavbar";
 import "./App.css";
 import MenuHeaderHero from "./components/MenuHeaderHero";
 import MenuSection from "./components/MenuSection";
-import FoodItemCard from "./components/FoodItemCard";
 import Footer from "./components/Footer";
 import BasketPreview from "./components/BasketPreview";
 import Carousel from "./components/UI/Carousel";
