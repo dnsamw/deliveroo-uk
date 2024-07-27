@@ -1,13 +1,13 @@
 // MENU is the major entity here Not the RESTAURANT !!
 export type FoodMenu = {
-  id: string;
+  id: number;
   name: string;
   description: string;
   tags: string[];
   min_price: number;
   overall_rating: number;
   sections: FoodMenuSection[];
-  restaurant: string;
+  restaurant: Restaurant;
 };
 export type FoodMenuSection = {
   id: string;
@@ -62,14 +62,37 @@ export type FoodOptionItem = {
 };
 
 export type Restaurant = {
-  // id: string;
+  id: number;
   name: string;
   thumbnail: string;
   info: RestaurantInfo;
 };
 
 export type RestaurantInfo ={
+  about: string;
+  allergens_info: string;
+  telephone: string;
+  hygene_info: {
+    description: string;
+    rating: number;
+    rating_image: string;
+    rating_url: string;
+  };
+  location: {
+    address: string;
+    latitude: number;
+    longitude: number;
+  };
+  notes: string;
+}
 
+export type Review = {
+  id: number;
+  name: string;
+  avatar: string;
+  rating: number;
+  comment: string;
+  date: string;
 }
 
 // Resturant
@@ -90,6 +113,57 @@ export const fakeRestaurantInfo: RestaurantInfo = {
       },
       notes:"All dishes may contain traces of the following allergens: Gluten, Crustaceans, Eggs, Fish, Peanuts, Soybeans, Milk, Nuts (e.g. almonds, hazelnuts, walnuts, cashews, pecan nuts, Brazil nuts, pistachio nuts, macadamia nuts), Celery, Mustard, Sesame, Sulphur dioxide/sulphites, Lupin, Molluscs. For any questions regarding the allergen contents of specific dishes please contact the restaurant directly."
 }
+
+export const fakeReviews: Review[] = [
+  {
+    id: 1,
+    name: "John Doe",
+    avatar: "https://ugc-service.roocdn.com/images/d28f5b51f82f19bb7d185206cbb1cc0c76451653/avatars/profile-default-14.png?width=24&height=24",
+    rating: 5,
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    date: "2022-01-01"
+  },
+  {
+    id: 2,
+    name: "Jane Doe",
+    avatar: "https://ugc-service.roocdn.com/images/d28f5b51f82f19bb7d185206cbb1cc0c76451653/avatars/profile-default-27.png?width=24&height=24",
+    rating: 4,
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    date: "2022-01-02"
+  },
+  {
+    id: 3,
+    name: "Jane Doe",
+    avatar: "https://ugc-service.roocdn.com/images/d28f5b51f82f19bb7d185206cbb1cc0c76451653/avatars/profile-default-27.png?width=24&height=24",
+    rating: 2,
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    date: "2022-01-02"
+  },
+  {
+    id: 4,
+    name: "Jane Doe",
+    avatar: "https://ugc-service.roocdn.com/images/d28f5b51f82f19bb7d185206cbb1cc0c76451653/avatars/profile-default-27.png?width=24&height=24",
+    rating: 3,
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    date: "2022-01-02"
+  },
+  {
+    id: 5,
+    name: "John Doe",
+    avatar: "https://ugc-service.roocdn.com/images/d28f5b51f82f19bb7d185206cbb1cc0c76451653/avatars/profile-default-14.png?width=24&height=24",
+    rating: 5,
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    date: "2022-01-01"
+  },
+  {
+    id: 6,
+    name: "John Doe",
+    avatar: "https://ugc-service.roocdn.com/images/d28f5b51f82f19bb7d185206cbb1cc0c76451653/avatars/profile-default-14.png?width=24&height=24",
+    rating: 5,
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    date: "2022-01-01"
+  },
+]
 
 // Menu
 export const fakeFoodOptionItems: FoodOptionItem[] = [
@@ -206,14 +280,15 @@ export const fakeFoodMenuSections: FoodMenuSection[] = [
 ];
 
 export const fakeRestaurant: Restaurant = {
+  id:1,
   name: "Toss - St Martin's Lane",
   thumbnail:
     "https://rs-menus-api.roocdn.com/images/57800532-e16e-4743-83fb-06c3c2230d76/image.jpeg?width=538&height=302&auto=webp&format=jpg&fit=crop",
   info:fakeRestaurantInfo,
 };
 
-export const fakeFoodMenu = {
-  // id: '1',
+export const fakeFoodMenu:FoodMenu = {
+  id: 1,
   name: "Platters",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
