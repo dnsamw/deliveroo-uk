@@ -5,6 +5,7 @@ import { ModalType } from "../../types";
 import ModalHeading from "../UI/ModalParts/ModalHeading";
 import ModalText from "../UI/ModalParts/ModalText";
 import ModalIconLink from "../UI/ModalParts/ModalIconLink";
+import CenterModalContainerLayout from "../../layouts/CenterModalContainerLayout";
 
 type Props = {
   onClose: () => void;
@@ -17,7 +18,8 @@ function RestaurantInfoModal({ onClose }: Props) {
   return (
     <>
       <SharedModalLayout>
-        <div className="animate-zoom w-[600px] bg-white h-screen xl:max-h-[90%] max-w[85%] overflow-x-scroll rounded flex flex-col">
+      <CenterModalContainerLayout>
+        <div className="animate-zoom w-full xl:w-[600px] bg-white h-screen overflow-x-scroll rounded flex flex-col overflow-y-scroll mt-[60px]">
           <ModalHeader
             modalType={ModalType.RestaurantInfo}
             onClose={handleClose}
@@ -48,8 +50,9 @@ function RestaurantInfoModal({ onClose }: Props) {
             <ModalHeading heading={"Notes"} />
             <ModalText text={"All dishes may contain traces of the following allergens: Gluten, Crustaceans, Eggs, Fish, Peanuts, Soybeans, Milk, Nuts (e.g. almonds, hazelnuts, walnuts, cashews, pecan nuts, Brazil nuts, pistachio nuts, macadamia nuts), Celery, Mustard, Sesame, Sulphur dioxide/sulphites, Lupin, Molluscs. For any questions regarding the allergen contents of specific dishes please contact the restaurant directly."} />
           </div>
-          <div className="modal-footer"></div>
+          {/* <div className="modal-footer"></div> */}
         </div>
+      </CenterModalContainerLayout>
       </SharedModalLayout>
     </>
   );

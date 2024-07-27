@@ -33,8 +33,8 @@ function ModalHeader({ onClose, modalTitle, modalType }: Props) {
   };
 
   return (
-    <div>
-      <div className="modal-header border-b h-[60px] bg-white flex justify-center items-center relative">
+    
+      <div className="modal-header border-b h-[60px] bg-white flex justify-center items-center absolute top-0 w-full xl:w-[600px]">
         {modalTitle && modalType !== ModalType.MobileSearch && (
           <h3 className="text-md font-bold">{modalTitle}</h3>
         )}
@@ -52,7 +52,7 @@ function ModalHeader({ onClose, modalTitle, modalType }: Props) {
           {renderExitIcon(getModalExitType(modalType))}
         </button>
       </div>
-    </div>
+    
   );
 }
 
