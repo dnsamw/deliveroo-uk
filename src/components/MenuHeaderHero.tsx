@@ -12,6 +12,7 @@ import RestaurantInfoModal from "./modals/RestaurantInfoModal";
 import RestaurantReviewsModal from "./modals/RestaurantReviewsModal";
 import {fakeFoodMenu as foodMenu} from "./_testdata/fakeData";
 import LocationChangerModal from "./modals/LocationChangerModal";
+import DeliverLocationTimeMultiStepModal from "./modals/DeliverLocationTimeMultiStepModal";
 
 type Props = {};
 function MenuHeaderHero({}: Props) {
@@ -30,7 +31,8 @@ function MenuHeaderHero({}: Props) {
       case ModalType.RestaurantReviews:
         return <RestaurantReviewsModal onClose={() => setIsModalOpen(false)} />;
       case ModalType.LocationChanger:
-        return <LocationChangerModal onClose={() => setIsModalOpen(false)} />;
+        return <DeliverLocationTimeMultiStepModal onClose={() => setIsModalOpen(false)} />;
+        // return <LocationChangerModal onClose={() => setIsModalOpen(false)} />;
       default:
         return null;
     }

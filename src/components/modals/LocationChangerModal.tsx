@@ -32,6 +32,7 @@ function LocationChangerModal({ onClose }: Props) {
           >
             <IoCloseSharp className="text-3xl text-teal-400" />
           </button>
+
         </CenterMobileBottomModalContainerLayout>
       </SharedModalLayout>
     </>
