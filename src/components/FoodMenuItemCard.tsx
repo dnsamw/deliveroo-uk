@@ -11,7 +11,7 @@ function FoodMenuItemCard({}: Props) {
       <div className="flex flex-col xl:h-28">
         <div className="text-gray-700 font-bold text-md">{fakeFoodProduct.name}</div>
         <p className="text-gray-500 text-[0.85rem]">
-          {fakeFoodProduct.shortDescription}
+          {fakeFoodProduct.short_description}
         </p>
         <div className="text-gray-500 text-md">{fakeFoodProduct.price}</div>
       </div>

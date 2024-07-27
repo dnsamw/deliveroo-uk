@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import MenuStickyNavbar from "./components/MenuStickyNavbar";
-import { sections } from "./components/_testdata/fakeData";
+import { fakeFoodMenuSections as foodMenuSections } from "./components/_testdata/fakeData";
 import PrimaryNavbar from "./components/PrimaryNavbar";
 import "./App.css";
 import MenuHeaderHero from "./components/MenuHeaderHero";
@@ -17,7 +17,7 @@ const App = () => {
       const scrollPosition = window.scrollY + 100; // 100px before hitting the section
       let newActiveSection = "";
 
-      sections.forEach((section) => {
+      foodMenuSections.forEach((section) => {
         const element = document.getElementById(section.id);
         if (element && element.offsetTop <= scrollPosition) {
           newActiveSection = section.id;
@@ -43,7 +43,7 @@ const App = () => {
       <div className="section-container w-[100%] flex">
         <section className="h-auto bg-gray-200 w-[100%] md:w-[60%] xl:w-[70%]">
           <Carousel />
-          {sections.map((section) => (
+          {foodMenuSections.map((section) => (
             <MenuSection key={section.id} section={section} />
           ))}
         </section>

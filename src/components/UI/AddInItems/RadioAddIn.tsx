@@ -24,10 +24,10 @@ function RadioAddIn({}: Props) {
           value={option.id}
           checked={selected === option.id}
           onChange={() => setSelected(option.id)}
-          className="form-radio h-5 w-5 text-teal-400"
+          className="form-radio h-5 w-5 accent-teal-300 focus:accent-teal-500"
         />
         <div className="flex flex-col">
-          <span className="text-sm  text-black">{option.name}</span>
+          <span className="text-sm text-black">{option.name}</span>
           <span className="text-xs text-gray-500">
             {option.allergens}, {option.calories} kcal
           </span>

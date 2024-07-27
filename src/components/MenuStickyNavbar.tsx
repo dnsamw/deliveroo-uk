@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MenuCategory, sections } from "./_testdata/fakeData";
+import { MenuCategory, fakeFoodMenuSections as foodMenuSections } from "./_testdata/fakeData";
 import NavItem from "./UI/NavItem";
 import { IoChevronDown } from "react-icons/io5";
 import ListItem from "./UI/ListItem";
@@ -12,7 +12,7 @@ function MenuStickyNavbar({ activeSection }: Props) {
   const [isSticky, setIsSticky] = useState(false);
   const navbarRef = useRef<HTMLElement | null>(null);
 
-  const [visibleItems, setVisibleItems] = useState<MenuCategory[]>(sections);
+  const [visibleItems, setVisibleItems] = useState<MenuCategory[]>(foodMenuSections);
   const [hiddenItems, setHiddenItems] = useState<MenuCategory[]>([]);
   const [hiddenActiveItem, setHiddenActiveItem] = useState<MenuCategory>();
   const [showMore, setShowMore] = useState(false);
@@ -45,11 +45,11 @@ function MenuStickyNavbar({ activeSection }: Props) {
       const availableWidth = width - moreItemWidth;
       const itemsToShow = Math.floor(availableWidth / itemWidth);
 
-      if (itemsToShow < sections.length) {
-        setVisibleItems(sections.slice(0, itemsToShow));
-        setHiddenItems(sections.slice(itemsToShow));
+      if (itemsToShow < foodMenuSections.length) {
+        setVisibleItems(foodMenuSections.slice(0, itemsToShow));
+        setHiddenItems(foodMenuSections.slice(itemsToShow));
       } else {
-        setVisibleItems(sections);
+        setVisibleItems(foodMenuSections);
         setHiddenItems([]);
       }
     };

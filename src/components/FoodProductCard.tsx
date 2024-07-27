@@ -22,7 +22,7 @@ function FoodProductCard({}: Props) {
         />
         <div className="px-4 py-2">
           <h2 className="text-md font-semibold">{fakeFoodProduct.name}</h2>
-          <p className="text-sm text-gray-500">{fakeFoodProduct.cal}</p>
+          <p className="text-sm text-gray-500">{fakeFoodProduct.calories}</p>
           <p className="text-sm text-gray-700">{fakeFoodProduct.price}</p>
           <button className="mt-4 w-full bg-transparent hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded-sm flex justify-center items-center">
             <IoAddSharp className="text-2xl text-teal-400" />

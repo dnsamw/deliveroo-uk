@@ -1,5 +1,6 @@
 import React from "react";
 import RadioAddIn from "./UI/AddInItems/RadioAddIn";
+import CheckboxAddIn from "./UI/AddInItems/CheckboxAddIn";
 
 type Props = {};
 
@@ -12,6 +13,7 @@ function FoodItemAddIn({}: Props) {
       </div>
       <div className="w-full flex flex-col text-gray-900 justify-center items-center">
         <RadioAddIn />
+        <CheckboxAddIn />
       </div>
     </>
   );

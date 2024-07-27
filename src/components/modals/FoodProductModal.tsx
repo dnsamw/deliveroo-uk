@@ -6,6 +6,7 @@ import CenterModalContainerLayout from "../../layouts/CenterModalContainerLayout
 import { fakeFoodProduct } from "../_testdata/fakeData";
 import { IoCloseSharp } from "react-icons/io5";
 import FoodAddInOption from "../FoodAddInOption";
+import {fakeFoodOption} from "../../components/_testdata/fakeData";
 
 type Props = {
   onClose: () => void;
@@ -42,7 +43,7 @@ function FoodProductModal({ onClose }: Props) {
             <div className="food-info border-b border-gray-200 pb-4">
               <h3 className="text-2xl font-bold pb-2">{fakeFoodProduct.name}</h3>
               <p className="text-md pb-2">{fakeFoodProduct.description}</p>
-              <p className="text-md text-gray-700">{fakeFoodProduct.cal}</p>
+              <p className="text-md text-gray-700">{fakeFoodProduct.calories}</p>
             </div>
 
             <div className="ingredients border-b border-gray-200 pb-4">
