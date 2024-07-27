@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoAddSharp } from "react-icons/io5";
 import { fakeFoodProduct } from "./_testdata/fakeData";
-import FoodItemModal from "./modals/FoodItemModal";
+import FoodProductModal from "./modals/FoodProductModal";
 type Props = {};
 
 function FoodProductCard({}: Props) {
@@ -29,7 +29,7 @@ function FoodProductCard({}: Props) {
           </button>
         </div>
       </div>
-      {isModalOpen && <FoodItemModal onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && <FoodProductModal onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }

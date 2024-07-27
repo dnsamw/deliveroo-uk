@@ -13,25 +13,29 @@ function RadioAddIn({}: Props) {
 
   return (
     
-    <div className="max-w-md mx-auto mt-8">
+    <div className="w-full mx-auto mt-2">
     {foodOptionItems.map((option) => (
-      <label key={option.id} className="flex items-center space-x-3 mb-3 cursor-pointer">
+      <label key={option.id} className="flex items-center justify-between space-x-3 mb-4 cursor-pointer">
+
+        <div className="flex items-center gap-4">
         <input
           type="radio"
           name="food-option"
           value={option.id}
           checked={selected === option.id}
           onChange={() => setSelected(option.id)}
-          className="form-radio h-5 w-5 text-blue-600"
+          className="form-radio h-5 w-5 text-teal-400"
         />
         <div className="flex flex-col">
-          <span className="text-sm font-medium text-gray-900">{option.name}</span>
+          <span className="text-sm  text-black">{option.name}</span>
           <span className="text-xs text-gray-500">
             {option.allergens}, {option.calories} kcal
           </span>
         </div>
+        </div>
+
         {option.price && (
-          <span className="ml-auto text-sm font-medium text-gray-900">+£{option.price.toFixed(2)}</span>
+          <span className="ml-auto text-sm  text-gray-900">+£{option.price.toFixed(2)}</span>
         )}
       </label>
     ))}

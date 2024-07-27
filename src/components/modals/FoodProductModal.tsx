@@ -10,7 +10,7 @@ import FoodAddInOption from "../FoodAddInOption";
 type Props = {
   onClose: () => void;
 };
-function FoodItemModal({ onClose }: Props) {
+function FoodProductModal({ onClose }: Props) {
   const handleClose = () => {
     onClose();
   };
@@ -57,15 +57,8 @@ function FoodItemModal({ onClose }: Props) {
             </div>
 
             <div className="food-info border-b border-gray-200 pb-4">
-              <div className="pb-2">
-                <h4 className="text-md font-semibold">AddIn Option Title</h4>
-                <p className="text-sm text-gray-700">AddIn Option required flag</p>
-              </div>
+              
               <div className="flex flex-col gap-2">
-              <FoodAddInOption />
-              <FoodAddInOption />
-              <FoodAddInOption />
-              <FoodAddInOption />
               <FoodAddInOption />
               </div>
             </div>
@@ -78,4 +71,4 @@ function FoodItemModal({ onClose }: Props) {
   );
 }
 
-export default FoodItemModal;
+export default FoodProductModal;
