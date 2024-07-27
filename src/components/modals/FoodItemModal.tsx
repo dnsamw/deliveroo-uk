@@ -35,6 +35,7 @@ function FoodItemModal({ onClose }: Props) {
           >
             <IoCloseSharp className="text-3xl text-teal-400" />
           </button>
+          
           <div className="modal-body p-4 flex flex-col gap-4">
 
             <div className="food-info border-b border-gray-200 pb-4">
@@ -47,13 +48,14 @@ function FoodItemModal({ onClose }: Props) {
               <div className="text-sm font-semibold">
                 Contains 
                 {fakeFoodItem.ingredients.map((ingredient, index) => (
-                  <p className="inline-block" key={index}>{`${ingredient} ${fakeFoodItem.ingredients.length-1 !== index &&",&nbsp;"}`}</p>
+                  <p className="inline-block" key={index}>{ingredient} {fakeFoodItem.ingredients.length-1 !== index &&",&nbsp;"}</p>
                 ))}
               </div>
                 <p className="text-sm text-gray-700">Questions about allergens, ingredients or cooking methods?</p>
                 <a href="#" className="text-sm text-teal-400">Please contact the restaurant.</a>
             </div>
           </div>
+
           <div className="modal-footer"></div>
         </CenterModalContainerLayout>
       </SharedModalLayout>
