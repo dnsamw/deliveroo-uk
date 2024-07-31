@@ -8,3 +8,14 @@ export enum IconButtonTypes {
 export const siteMaterData = {
   brandName: "Deliveroo",
 };
+
+const Config = {
+  entrySites: {
+    hosts: {
+      stg: "stg.stagingsite.io",
+      live: "livesite.io",
+    },
+  },
+};
+
+export default Config;
