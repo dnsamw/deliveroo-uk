@@ -2,6 +2,7 @@ import React from "react";
 import SharedModalLayout from "../../layouts/SharedModalLayout";
 import ModalHeader from "../UI/ModalParts/ModalHeader";
 import { ModalType } from "../../types";
+import { fakeFoodMenu } from "../_testdata/fakeData";
 
 type Props = {
   onClose: () => void;

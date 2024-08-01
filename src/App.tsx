@@ -7,6 +7,7 @@ import { BrowserStorage } from "./browserStorage";
 import { getMMenuListData } from "./redux/actions/uiMasterDataActions";
 import { useAppDispatch } from "./hooks";
 import { setGlobalLoading } from "./redux/reducers/authSlice";
+import Homepage from "./pages/Homepage";
 
 const App = () => {
 
@@ -44,7 +45,8 @@ const App = () => {
 
   return (
     <div className="App bg-gray-50">
-      <RestaurantMenuPage />
+      <Homepage />
+      {/* <RestaurantMenuPage /> */}
     </div>
   );
 };
