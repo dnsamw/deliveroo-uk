@@ -32,7 +32,7 @@ function RestaurantMenuPage({}: Props) {
       setActiveSection(newActiveSection);
     };
 
-    console.log(fakeFoodMenu);
+    // console.log(fakeFoodMenu);
 
     window.addEventListener("scroll", handleScroll);
     return () => {
