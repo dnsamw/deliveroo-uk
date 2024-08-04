@@ -8,7 +8,7 @@ function Homepage({}: Props) {
   return (
     <>
     <PrimaryNavbar />
-    <div className="home-body h-screen bg-teal-50">
+    <div className="home-body h-screen">
 
     </div>
     <Footer />

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { CSSProperties, useEffect, useRef, useState } from "react";
 import { IoCloseOutline, IoSearchOutline } from "react-icons/io5";
 import useDebounce from "../../hooks/useDebounce";
+import { MoonLoader, PuffLoader } from "react-spinners";
 
 type Props = {
   handleSearch: (inputValue: string) => void;
@@ -10,8 +11,13 @@ type Props = {
 function IconSearchBar({ handleSearch, resultList = [] }: Props) {
   const [searchValue, setSearchValue] = useState("");
   const debouncedSearchValue = useDebounce(searchValue, 800); // * miliseconds
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
 
-  console.log("resultList", resultList);
+  const handleFocus = () => setIsFocused(true);
+  const handleBlur = () => setIsFocused(false);
+
+  // console.log("resultList", resultList);
 
   useEffect(() => {
     if (searchValue === "") return;
@@ -24,6 +30,7 @@ function IconSearchBar({ handleSearch, resultList = [] }: Props) {
 
   const resetSearchInput = () => {
     setSearchValue("");
+    setIsFocused(false);
   };
 
   const renderSearchResults = (resultList: any[]) => {
@@ -31,14 +38,17 @@ function IconSearchBar({ handleSearch, resultList = [] }: Props) {
       resultList?.length > 0 &&
       resultList?.map((item, index) => (
         <div
-          className="border rounded p-4 bg-white flex gap-2 hover:cursor-pointer hover:bg-teal-50"
+          className="border-b p-4 bg-white flex gap-2 hover:cursor-pointer hover:bg-gray-50"
           key={index}
         >
-          <img className="w-16 h-16 rounded" src={item?.img} alt={item?.name} />
-          <div>
+          <img className="w-20 h-20 rounded" src={item?.img} alt={item?.name} />
+          <div className="flex">
+          <div className="flex flex-col gap-1">
             <p className="text-md font-semibold">{item?.name}</p>
-            <p className="text-sm">Sample Text</p>
+            <p className="text-sm text-gray-500">Orange, carrot, ginger & lemon juice and turmeric. - 1 litre: large enough to share!</p>
+            <p className="text-sm">318 kcal</p>
             <p className="text-sm">$5-$10</p>
+          </div>
           </div>
         </div>
       ))
@@ -59,14 +69,26 @@ function IconSearchBar({ handleSearch, resultList = [] }: Props) {
         )}
       </span>
       <input
+        ref={inputRef}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         onChange={handleChange}
         value={searchValue}
         className="border rounded-md text-md px-4 py-2 pl-12 w-full"
         type="text"
         placeholder="Search Tossed - St Martin's Lane"
       />
-      <div className="absolute w-full top-12 h-50 bg-gray-50 flex flex-col gap-2 p-2 rounded">
-        {(searchValue && resultList?.length > 0) && renderSearchResults(resultList)}
+      <div className="absolute w-full top-[45px] max-h-[70vh] shadow-lg bg-white flex flex-col overflow-y-scroll">
+        {(isFocused && searchValue && resultList?.length === 0) && <div className="w-full flex justify-center py-4">
+        <PuffLoader
+         color={"#2dd4bf"}
+         loading={true}
+         size={60}
+         aria-label="Loading Spinner"
+         data-testid="loader"
+        />
+        </div>}
+        {( resultList?.length > 0 /*&& isFocused && searchValue*/) && renderSearchResults(resultList)}
       </div>
     </div>
   );
